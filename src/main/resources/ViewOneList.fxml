@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewOneListController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="540.8" minWidth="10.0" prefWidth="461.5999877929687" />
   </columnConstraints>
@@ -20,7 +20,7 @@
     <RowConstraints maxHeight="321.6" minHeight="10.0" prefHeight="310.79996795654296" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="202.0" text="Your List" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <Label fx:id="listNameLabel" alignment="TOP_CENTER" prefHeight="30.0" prefWidth="202.0" text="Your List" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <font>
             <Font size="28.0" />
          </font>
@@ -30,18 +30,18 @@
       </Label>
       <HBox prefHeight="302.0" prefWidth="479.0" GridPane.rowIndex="1">
          <children>
-            <ListView prefHeight="206.0" prefWidth="375.0">
+            <ListView fx:id="singleListViewer" prefHeight="206.0" prefWidth="375.0">
                <padding>
                   <Insets bottom="14.0" left="14.0" top="14.0" />
                </padding>
             </ListView>
             <VBox alignment="CENTER" prefHeight="283.0" prefWidth="145.0" spacing="14.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Edit Item" />
-                  <Button alignment="CENTER" layoutX="25.0" layoutY="135.0" mnemonicParsing="false" prefWidth="100.0" text="Mark Done" />
-                  <Button mnemonicParsing="false" prefWidth="100.0" text="View Done" />
-                  <Button layoutX="21.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="View Not Done" />
-                  <Button alignment="CENTER" layoutX="23.0" layoutY="115.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Export..." />
+                  <Button fx:id="editListButton" alignment="CENTER" mnemonicParsing="false" onAction="#editListButtonClicked" prefHeight="26.0" prefWidth="100.0" text="Edit List" />
+                  <Button fx:id="markDoneButton" alignment="CENTER" layoutX="25.0" layoutY="135.0" mnemonicParsing="false" onAction="#markDoneButtonClicked" prefWidth="100.0" text="Mark Done" />
+                  <Button fx:id="viewDoneButton" mnemonicParsing="false" onAction="#viewDoneButtonClicked" prefWidth="100.0" text="View Done" />
+                  <Button fx:id="viewNotDoneButton" layoutX="21.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewNotDoneButtonClicked" prefHeight="26.0" prefWidth="100.0" text="View Not Done" />
+                  <Button fx:id="exportButton" alignment="CENTER" layoutX="23.0" layoutY="115.0" mnemonicParsing="false" onAction="#exportButtonClicked" prefHeight="26.0" prefWidth="100.0" text="Export..." />
                </children>
             </VBox>
          </children>
@@ -49,7 +49,7 @@
             <Insets bottom="14.0" top="14.0" />
          </padding>
       </HBox>
-      <Button mnemonicParsing="false" text="Back to Lists..." />
+      <Button fx:id="backToListsButton" mnemonicParsing="false" onAction="#backToListsButtonClicked" text="Back to Lists..." />
    </children>
    <padding>
       <Insets left="14.0" />
