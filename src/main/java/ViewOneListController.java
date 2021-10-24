@@ -10,58 +10,37 @@ import javafx.scene.control.ListView;
 
 public class ViewOneListController {
 
-    @FXML
-    private Button backToListsButton;
+    @FXML private Button backToListsButton;
+    @FXML private Button editListButton;
+    @FXML private Button exportButton;
+    @FXML private Label listNameLabel;
+    @FXML private Button markDoneButton;
+    @FXML private ListView<Item> singleListViewer;
+    @FXML private Button viewDoneButton;
+    @FXML private Button viewNotDoneButton;
 
-    @FXML
-    private Button editListButton;
-
-    @FXML
-    private Button exportButton;
-
-    @FXML
-    private Label listNameLabel;
-
-    @FXML
-    private Button markDoneButton;
-
-    @FXML
-    private ListView<Item> singleListViewer;
-
-    @FXML
-    private Button viewDoneButton;
-
-    @FXML
-    private Button viewNotDoneButton;
-
-    @FXML
-    void backToListsButtonClicked(ActionEvent event) {
+    @FXML void backToListsButtonClicked(ActionEvent event) {
         //return the user to the screen that lets them view all of their toDoLists
     }
 
-    @FXML
-    void editListButtonClicked(ActionEvent event) {
+    @FXML void editListButtonClicked(ActionEvent event) {
         //open up the list the user is viewing in the list editor
     }
 
-    @FXML
-    void exportButtonClicked(ActionEvent event) {
+    @FXML void exportButtonClicked(ActionEvent event) {
         //create a file based on the list the user is viewing
         //open a Windows explorer dialogue box to select where the user wants to save the list
     }
 
-    @FXML
-    void markDoneButtonClicked(ActionEvent event) {
+    @FXML void markDoneButtonClicked(ActionEvent event) {
         //mark the selected item in the list as completed
     }
 
-    @FXML
-    void viewDoneButtonClicked(ActionEvent event) {
+    @FXML void viewDoneButtonClicked(ActionEvent event) {
         //hide all list entries that are not completed
     }
 
-    @FXML
-    void viewNotDoneButtonClicked(ActionEvent event) {
+    @FXML void viewNotDoneButtonClicked(ActionEvent event) {
         //hide all list entries that are completed
     }
 

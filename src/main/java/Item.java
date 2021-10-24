@@ -3,6 +3,7 @@
  *  Copyright 2021 Peter Perri
  */
 public class Item {
+
     private String itemName;
     private String description;
     private String dueDate;
@@ -14,7 +15,6 @@ public class Item {
         description = "";
         dueDate = "";
         completed = false;
-
     }
 
     //constructor for if the user enters all fields but does not specify if the item is done
@@ -35,7 +35,7 @@ public class Item {
         this.completed = completed;
     }
 
-    //constructor for it the user enters all fields including item completion status
+    //constructor for if the user enters all fields including item completion status
     public Item(String itemName, String description, String dueDate, boolean completed){
         this.itemName =itemName;
         this.description = description;

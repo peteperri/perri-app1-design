@@ -29,11 +29,13 @@ public class ToDoList {
     }
 
     public void addItemToList(Item item){
-        itemList.add(item);
+
+        //add an item to the list using the ArrayList's add method
     }
 
     public void removeItemFromList(Item item){
-        itemList.remove(item);
+
+        //remove an item from the list using the ArrayList's remove method
     }
 
 }
