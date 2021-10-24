@@ -14,15 +14,9 @@ public class ToDoList {
         if(validateTitle(title)){
             this.title = title;
         }
-        if(validateToDoList(itemList)){
-            this.itemList = (ArrayList<Item>) itemList;
-        }
+        this.itemList = (ArrayList<Item>) itemList;
     }
 
-    public boolean validateToDoList(List<Item> itemList){
-        //verify that the toDoList does not have more than 256 items
-        return true;
-    }
     public boolean validateTitle(String title){
         //method verifies that the title is at least 3 chars long
         return true;

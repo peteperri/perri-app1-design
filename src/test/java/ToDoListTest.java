@@ -1,15 +1,12 @@
+/*
+ *  UCF COP3330 Fall 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Peter Perri
+ */
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ToDoListTest {
-
-    @Test
-    void validateToDoList() {
-        //create a new ToDoList object
-        //attempt to give it a list larger than 256 items
-        //assert that the list is not allowed to be less than 256 items
-    }
 
     @Test
     void validateTitle() {
