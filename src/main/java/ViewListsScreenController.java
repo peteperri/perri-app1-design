@@ -64,8 +64,13 @@ public class ViewListsScreenController {
 
     }
 
-    @FXML void viewListButtonClicked(ActionEvent event) {
+    @FXML void viewListButtonClicked(ActionEvent event) throws IOException {
         //open up the selected list in the screen that controls viewing one single list.
         //if the user selected multiple lists or no lists, don't open the window and give an error message.
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ViewOneList.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

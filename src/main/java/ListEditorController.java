@@ -25,7 +25,7 @@ public class ListEditorController {
     @FXML private TextField dueDateField;
     @FXML private CheckBox doneCheckBox;
     @FXML private Button editItemButton;
-    @FXML private ListView<?> editorListDisplay;
+    @FXML private ListView<Item> editorListDisplay;
     @FXML private Button importButton;
     @FXML private Button listNameButton;
     @FXML private TextField listNameField;

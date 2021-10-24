@@ -1,0 +1,124 @@
+@startuml
+'https://plantuml.com/class-diagram
+
++class Application{
++void start(Stage primaryStage)
++void main(String[] args)
+}
+
++class Item{
+-String itemName
+-String description
+-String dueDate
+-boolean completed
++Item(String itemName)
++Item(String itemName, String description, String dueDate)
++Item(String itemName, boolean completed)
++Item(String itemName, String description, String dueDate, boolean completed)
++String toString()
+-boolean validateDueDate(String dueDate)
++void setDescription(String description)
++void setDueDate(String dueDate)
++void setCompleted(boolean completed)
+}
+
++class ToDoList{
+-String title
+-ArrayList<Item> itemList
++ToDoList(String title, List<Item> itemList)
++boolean validateToDoList
++boolean validateTitle
++void addItemToList
++void removeItemFromList
+}
+
++class TitleScreenController{
+-Button createNewListButton
+-Button viewListButton
+-Parent root
+-Stage stage
+-Scene scene
+void newListButtonClicked(ActionEvent event)
+void viewListButtonClicked(ActionEvent event)
+}
+
++class ListEditorController{
+-Button addItemButton
+-TextField taskField
+-TextField dueDateField
+-Checkbox doneCheckBox
+-Button editItemButton
+-ListView<Item> editorListDisplay
+-Button importButton
+-Button listNameButton
+-TextField listNameField
+-Text listNameLabel
+-Button mainMenuButton
+-Button removeItemButton
+-Parent root
+-Stage stage
+-Scene scene
+void addItemButtonClicked(ActionEvent event)
+void doneCheckBoxChecked(ActionEvent event)
+void editItemButtonClicked(ActionEvent event)
+void importButtonClicked(ActionEvent event)
+void mainMenuButtonClicked(ActionEvent event)
+void removeItemButtonClicked(ActionEvent event)
+}
+
++class ViewListsScreenController{
+-Button addListButton
+-Button backButton
+-Button deleteListButton
+-Button editListButton
+-Button exportListButton
+-Parent root
+-Stage stage
+-Scene scene
+-Label infoLabel
+-ListView<ToDoList> viewAllLists
+-Button viewListButton
+void addListButtonClicked(ActionEvent event)
+void backButtonClicked(ActionEvent event)
+void deleteListButtonClicked(ActionEvent event)
+void editListButtonClicked(ActionEvent event)
+void exportListButton(ActionEvent event)
+void viewListButtonClicked(ActionEvent event)
+
+}
+
++class ViewOneListController{
+-Button backToListsButton
+-Button editListButton
+-Button exportButton
+-Label listNameLabel
+-Button markDoneButton
+-ListView<Item> singleListViewer
+-Button viewDoneButton
+-Button viewNotDoneButton
+-Parent root
+-Stage stage
+-Scene scene
+void backToListsButtonClicked(ActionEvent event)
+void editListButtonClicked(ActionEvent event)
+void exportListButtonClicked(ActionEvent event)
+void markDoneButtonClicked(ActionEvent event)
+void viewDoneButtonClicked(ActionEvent event)
+void viewNotDoneButtonClicked(ActionEvent event)
+}
+
+Item --* "ToDoList has Items" ToDoList
+Application -- "launches" TitleScreenController
+TitleScreenController <--> ListEditorController
+TitleScreenController <-->  ViewListsScreenController
+ViewListsScreenController <--> ViewOneListController
+ViewListsScreenController --> ListEditorController
+ViewOneListController --> ListEditorController
+ListEditorController --* "edits" ToDoList
+ListEditorController --* "edits" Item
+ViewListsScreenController --* "displays" ToDoList
+ViewOneListController --* "displays" ToDoList
+ViewOneListController --* "displays" Item
+
+
+@enduml
