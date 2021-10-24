@@ -88,7 +88,6 @@ public class ListEditorController {
         //open up a file explorer window. if the user selects a file
         //recognized by the program, make a toDoList or multiple based on the file.
         //if not, show an error message
-
     }
 
     @FXML
